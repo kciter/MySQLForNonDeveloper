@@ -85,10 +85,6 @@ MySQL이란 관계형 데이터베이스 관리 시스템입니다. 이렇게 �
 3. 데이터베이스는 데이터의 집합이다.
 4. MySQL은 관계형 데이터베이스 관리 시스템이다.
 
-<p align="right">
-<a href='INSTALL.md'>설치 -></a>
-</p>
-
 ## 지적, 수정사항에 대해서
 Github 계정이 있으신 분들은 Issue에 지적사항을 등록해주시거나 직접 수정하여 Pull request를 주시면 반영하도록 하겠습니다. <br>Github 계정이 없으신 분들은 kciter@naver.com를 통해 지적사항을 보내주세요. :smile:
 
