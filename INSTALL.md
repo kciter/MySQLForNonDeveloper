@@ -19,13 +19,6 @@ MySQL Workbench는 MySQL을 좀 더 쉽게 사용할 수 있도록 도와주는 
 
 [다음 장](BASIC.md)에서는 MySQL을 이용하여 기본적인 문법을 배워봅시다.
 
-<p align="left">
-<a href='INSTALL.md'><- 설치</a>
-</p>
-<p align="right">
-<a href='BASIC.md'>SELECT 기초 -></a>
-</p>
-
 ## 지적, 수정사항에 대해서
 Github 계정이 있으신 분들은 Issue에 지적사항을 등록해주시거나 직접 수정하여 Pull request를 주시면 반영하도록 하겠습니다. <br>Github 계정이 없으신 분들은 kciter@naver.com를 통해 지적사항을 보내주세요. :smile:
 
