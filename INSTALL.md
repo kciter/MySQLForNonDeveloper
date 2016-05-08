@@ -17,7 +17,10 @@ MySQL 설치는 [이곳](http://dev.mysql.com/downloads/mysql/)에서 하시면 
 ## MySQL Workbench
 MySQL Workbench는 MySQL을 좀 더 쉽게 사용할 수 있도록 도와주는 툴입니다. 버그도 종종 있지만 편리한 기능이 많으므로 사용하면 좋습니다. 만약 MySQL Workbench를 MySQL 설치하며 하지 못했다면 [이곳](http://dev.mysql.com/downloads/workbench/)에서 설치 할 수 있습니다.
 
-[다음 장](BASIC.md)에서는 MySQL을 이용하여 기본적인 문법을 배워봅시다.
+## 마치며
+무사히 설치하셨나요? 사실 이번 장은 부족한 점이 많다고 생각합니다. MySQL과 MySQL Workbench 설치에 대해서는 구글에 검색하면 여기서 설명한 것보다 더 훌륭한 포스트가 많습니다. 천천히 내용을 추가해 나가겠습니다. (이놈의 귀차니즘..ㅠㅠ)
+
+설치를 완료하셨다면 [다음 장](BASIC.md)에서 MySQL을 이용하여 기본적인 문법을 배워봅시다.
 
 ## 지적, 수정사항에 대해서
 Github 계정이 있으신 분들은 Issue에 지적사항을 등록해주시거나 직접 수정하여 Pull request를 주시면 반영하도록 하겠습니다. <br>Github 계정이 없으신 분들은 kciter@naver.com를 통해 지적사항을 보내주세요. :smile:
