@@ -28,11 +28,43 @@ SELECT * FROM table;
 ```sql
  SELECT        *       FROM table;
 #선택한다      모든것을    table로 부터
+
+#  결과
+#  name  |  age  |  gender
+#  이선협  |  23   |  man
+#  김지환  |  23   |  woman
+#  남세현  |  22   |  man
 ```
 
 여기서 `*`과 `table` 부분은 바뀔 수 있습니다. `SELECT`와 `FROM`은 예약어로 문법에서 이미 이 단어는 무엇에 사용할 것이다라고 정의해 놓은 단어기 때문에 바꿀 수 없습니다.<br>
 `*` 부분은 `table`에서 정의된 컬럼을 적는 부분입니다. 만약 `name`과 `age` 컬럼이 `table`에 있다면 `*`을 적었을 때 `name`과 `age`에 대한 로우를 모두 볼 수 있습니다. 만약 여기서 `*`을 `name`로 바꾼다면 `age`는 볼 수 없고 `name`에 대한 로우만 볼 수 있습니다. 필요하지 않은 데이터를 출력할 경우 분석에 혼란을 야기할 수 있기 때문에 `*` 부분을 잘 정의하는 것이 중요합니다. 정의되지 않은 컬럼 이름을 넣을 경우에는 문법 에러가 나게됩니다.<br>
+
+```sql
+# 예제 1
+SELECT name, age FROM table;
+#  결과
+#  name  |  age
+#  이선협  |  23
+#  남세현  |  22
+
+SELECT nama, age FROM table;
+# 만약 nama라는 컬럼이 없다면 에러가 납니다.
+```
+
 `table` 부분은 정의된 테이블의 이름을 넣으면 됩니다. 만약 `customers`과 `menus`라는 테이블이 있다면 `table`자리에 `customers`와 `menus`를 넣을 수 있습니다. 그 외에 정의되지 않은 테이블 이름을 적을 경우 문법 에러가 나게됩니다.
+
+```sql
+# 예제 2
+SELECT name FROM menus;
+# 결과
+# name
+# 라면
+# 김밥
+# 피자
+
+SELECT name FROM menu;
+# 만약 menu라는 테이블이 없다면 에러가 납니다.
+```
 
 ## 본격적으로 시작하기 전에
 MySQL을 이용하다보면 많은 에러를 볼 수 있습니다. SELECT에 대해서 더 자세히 알아보기 전에 에러 유형을 살펴보면 앞으로 공부할 때 에러 때문에 삽질하는 일이 줄어들 수 있습니다.
