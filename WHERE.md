@@ -29,7 +29,7 @@ SELECT * FROM table WHERE column1 > 10 AND column2 < 10 OR column3 = 10;
 위 예제처럼 `AND`와 `OR`는 섞어서 사용할 수 있습니다. SQL에는 **연선자 우선순위**라는 규칙이 있습니다. 연산자에는 `AND`와 `OR` 외에도 있지만 일단 `AND`와 `OR` 사이에서는 `AND`가 먼저 연산됩니다. 마치 *를 +보다 먼저 계산하듯이요. 만약 `OR`를 먼저 판단해야할 경우 다음과 같이 괄호를 이용하여 해결할 수 있습니다.
 
 ```sql
-SELECT * FROM table WHERE column1 > 10 AND (column2 < 10 OR column3) = 10;
+SELECT * FROM table WHERE column1 > 10 AND (column2 < 10 OR column3 = 10);
 ```
 
 ## 마치며
