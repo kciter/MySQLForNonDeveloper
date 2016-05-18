@@ -13,6 +13,7 @@
 6. [정렬](ORDER.md)
 7. [제한](LIMIT.md)
 8. [그룹](GROUP.md)
+9. [그룹 조건절](HAVING.md)
 
 ## 지적, 수정사항에 대해서
 Github 계정이 있으신 분들은 Issue에 지적사항을 등록해주시거나 직접 수정하여 Pull request를 주시면 반영하도록 하겠습니다. <br>Github 계정이 없으신 분들은 kciter@naver.com를 통해 지적사항을 보내주세요. :smile:
