@@ -34,8 +34,6 @@ SELECT * FROM customers ORDER BY visited_count DESC LIMIT 3;
 
 `LIMIT`를 붙였더니 딱 원하는 수 만큼만 데이터가 나왔습니다! 이제 `LIMIT`가 무엇인지 감이 오시나요? `LIMIT`는 위에서 부터 순서대로 자르는 쿼리입니다. 만약 `LIMIT 5`라고 했다면 딱 5개까지 출력되도록 제한합니다.
 
-## 생략
-
 ## 마치며
 이번 장에서는 `LIMIT`에 대해서 배웠습니다. 다음 장에서는 `GROUP BY`를 배워봅시다.
 
