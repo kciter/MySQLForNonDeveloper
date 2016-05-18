@@ -47,7 +47,7 @@ SELECT sum(price) as price_sum, customer FROM orders WHERE price >= 10000 GROUP 
 쿼리를 보시면 `sum(price)`의 별명을 `price_sum`으로 바꿔주고 `HAVING`절에서도 `price_sum`으로 바뀐 것을 볼 수 있습니다. 저런 방식으로 사용할 경우 두번 작업하지 않습니다.
 
 ## 마치며
-이번 장에서는 `HAVING`과 별명에 대해서 배웠습니다. `HAVING`은 은근히 헷갈려 하시는 분들이 많은데요. 생각보다 어렵지 않습니다. 그리고 별명은 뒤에 서브쿼리와 `JOIN`을 배우게 되면 상당히 많이 사용하게 되는 문법입니다. 다음 장에서는 `distinct`에 대해서 알아보겠습니다.
+이번 장에서는 `HAVING`과 별명에 대해서 배웠습니다. `HAVING`은 은근히 헷갈려 하시는 분들이 많은데요. 생각보다 어렵지 않습니다. 그리고 별명은 뒤에 서브쿼리와 `JOIN`을 배우게 되면 상당히 많이 사용하게 되는 문법입니다. [다음 장](DISTINCT.md)에서는 `DISTINCT`에 대해서 알아보겠습니다.
 
 ## 지적, 수정사항에 대해서
 Github 계정이 있으신 분들은 Issue에 지적사항을 등록해주시거나 직접 수정하여 Pull request를 주시면 반영하도록 하겠습니다. <br>Github 계정이 없으신 분들은 kciter@naver.com를 통해 지적사항을 보내주세요. :smile:
