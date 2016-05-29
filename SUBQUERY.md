@@ -19,7 +19,7 @@
 
 ```sql
 SELECT name FROM student WHERE id = (SELECT id FROM student WHERE kindness = 100 LIMIT 1); // 서브쿼리의 결과가 1개라면 id = 으로 사용할 수 있지만, 2개 이상일 경우 오류가 발생합니다.
-SELECT name FROM student WHERE id IN (SELECT id FROM student WHERE kindness = 100); // 2개 이상의 서브쿼리 결과를 WHERE로 처리하기 위해선 IN을 사용합니다!
+SELECT name FROM student WHERE id IN (SELECT id FROM student WHERE kindness = 100); // 2개 이상의 서브쿼리 결과를 WHERE로 처리하기 위해선 IN을 사용합니다.
 # 결과
 # id  |  이름
 # 1   |  김지환
@@ -28,11 +28,8 @@ SELECT name FROM student WHERE id IN (SELECT id FROM student WHERE kindness = 10
 위의 쿼리를 보면, 낯선 괄호 안의 쿼리가 있습니다.
 여기서, `SELECT name FROM student WHERE id =`을 **바깥 쿼리**, 그리고 괄호 안의 `SELECT id FROM student WHERE kindness = 100`을 **안쪽 쿼리**라고 부릅니다.
 
-위의 예제는 서브쿼리를 쓰기보단, WHERE 조건문을 이용해 쿼리를 날리는 것이 더 좋은 방법이지만, 서브쿼리를 설명하기 위해 친절한 지환님이 기꺼이 SELECT 되었습니다!
-
-
 ## 서브쿼리로 컬럼 추가하기
-서브쿼리를 이용해 테이블에 존재하지 않는 **가상의 컬럼**을 출력할 수 있습니다! 
+서브쿼리를 이용해 테이블에 존재하지 않는 **가상의 컬럼**을 추가 할 수 있습니다.
 `student` 테이블에서 키 순서에 대한 컬럼을 추가해보도록 하겠습니다.
 
 ```sql
@@ -46,14 +43,10 @@ SELECT *, (SELECT count(*)+1 FROM student WHERE height > s.height) AS rank FROM 
 # 5  | 김려은 | 170cm | 85     | 4
 ```
 
-우리는 서브쿼리의 결과에 대해 rank라는 별명을 붙이고 새로운 컬럼을 만들었습니다!
-우리 선협이는 조금 더 친절해질 필요가 있겠네요!
-
+우리는 위 쿼리와 같이 서브쿼리의 결과에 대해 rank라는 별명을 붙이고 새로운 컬럼을 만들었습니다.
 
 ## 서브쿼리로 가상의 테이블 만들기
-우리 머글 친구들은 어느날 파티에 초대되었어요!
-그런데 이를 어쩌나! 파티에 모두를 초대했던 세현이는 친절함에 따라 다른 음식을 준다고 하네요!
-세현이가 준 테이블을 보고, 불친절한 선협이를 포함한 친구들이 어떤 음식을 먹게될지 `서브쿼리`를 이용해 알아보도록 합시다!
+`SUBQUERY`는 `FROM`부분에도 들어갈 수 있습니다. 다음과 같은 테이블이 있다고 가정해봅시다.
 
 |id |음식    |친절함|
 |---|--------|------|
@@ -76,19 +69,12 @@ SELECT * FROM (SELECT s.name, f.food FROM student AS s, foods AS f WHERE s.kindn
 
 위의 `FROM` 뒤의 안쪽 쿼리 `SELECT s.name, f.food FROM student AS s, foods AS f WHERE s.kindness = f.kindness`는 `student` 테이블과 `foods` 테이블에서 `kindness` 컬럼 값으로 두 테이블을 합친 쿼리입니다. (**다음 장에서 배울 JOIN 연산이 이런 작업을 의미합니다.**)
 
-그리고 만들어진 가상 테이블에서 `SELECT`를 했더니...
-당분간 우리 선협이에겐 쑥냄새가 진동을 하겠군요!
-
+눈치 채신분도 계시겠지만 모든 `SELECT`를 통해 나온 결과는 이름없는 **가상 테이블**입니다. 이러한 가상 테이블도 `FROM`을 통해 데이터를 받아올 수 있습니다.
 
 ## 마치며
-이번 장에서는 `SUBQUERY`에 대해 알아보았습니다. 수학적으로 서브쿼리는 단일 쿼리로 바뀔 수 있음이 증명되었고, `JOIN`을 사용한 쿼리로도 변경될 수 있으며 심지어 성능도 `JOIN`이 더 좋습니다.
+이번 장에서는 `SUBQUERY`에 대해 알아보았습니다. 여기서 `SUBQUERY`는 수학적으로 단일 쿼리로 바뀔 수 있음이 증명되었고, `JOIN`을 사용한 쿼리로도 변경될 수 있으며 심지어 성능도 `JOIN`이 더 좋습니다. 하지만 서브쿼리를 쓰면 직관적이고 편하게 쿼리를 만들 수 있는 경우가 많습니다.
 
-그런데도 왜 `SUBQUERY`를 쓰냐고요?
-서브쿼리를 쓰면 직관적이고 편하게 쿼리를 만들 수 있는 경우가 많습니다! 
-하지만 성능엔 그렇게 좋은 영향을 미치진 못하죠.
-
-[다음 장](INNER-JOIN.md)에서는 `INNER JOIN`을 배워봅시다. `JOIN`은 관계형 데이터베이스의 꽃과도 같은 FUCKING SEXY한 기능입니다.
-
+[다음 장](INNER-JOIN.md)에서는 `INNER JOIN`을 배워봅시다.
 
 ## 지적, 수정사항에 대해서
 Github 계정이 있으신 분들은 Issue에 지적사항을 등록해주시거나 직접 수정하여 Pull request를 주시면 반영하도록 하겠습니다. <br>Github 계정이 없으신 분들은 kciter@naver.com를 통해 지적사항을 보내주세요. :smile:
