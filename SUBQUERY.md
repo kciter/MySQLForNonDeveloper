@@ -6,8 +6,7 @@
 직접 서브쿼리를 사용하는 것을 보면 더 쉽게 이해가 되니, 서브쿼리를 직접 보면서 배워봅시다.
 
 ## `SUBQUERY`
-서브쿼리를 사용하기 위해 특별한 키워드를 쓰지는 않습니다.
-다음과 같은 `student` 테이블에서, 친절함이 100인 사람의 이름을 알아보려고 합니다.
+서브쿼리를 사용하기 위해 특별한 키워드를 쓰지는 않습니다. 다음과 같은 테이블이 있습니다.
 
 |id |이름  |키   |친절함|
 |---|------|-----|----|
@@ -17,16 +16,19 @@
 |4  |이선협|168cm|0   |
 |5  |김려은|170cm|85  |
 
+여기서 친절함이 100인 사람의 이름을 알아보려고 합니다.
+
 ```sql
-SELECT name FROM student WHERE id = (SELECT id FROM student WHERE kindness = 100 LIMIT 1); // 서브쿼리의 결과가 1개라면 id = 으로 사용할 수 있지만, 2개 이상일 경우 오류가 발생합니다.
-SELECT name FROM student WHERE id IN (SELECT id FROM student WHERE kindness = 100); // 2개 이상의 서브쿼리 결과를 WHERE로 처리하기 위해선 IN을 사용합니다.
+SELECT name FROM student WHERE id = (SELECT id FROM student WHERE kindness = 100 LIMIT 1);
+# 서브쿼리의 결과가 1개라면 id = 으로 사용할 수 있지만, 2개 이상일 경우 오류가 발생합니다.
+SELECT name FROM student WHERE id IN (SELECT id FROM student WHERE kindness = 100);
+# 2개 이상의 서브쿼리 결과를 WHERE로 처리하기 위해선 IN을 사용합니다.
 # 결과
 # id  |  이름
 # 1   |  김지환
 ```
 
-위의 쿼리를 보면, 낯선 괄호 안의 쿼리가 있습니다.
-여기서, `SELECT name FROM student WHERE id =`을 **바깥 쿼리**, 그리고 괄호 안의 `SELECT id FROM student WHERE kindness = 100`을 **안쪽 쿼리**라고 부릅니다.
+위의 쿼리를 보면 **소괄호** 내부에 다시 쿼리가 나옵니다. 여기서 `SELECT name FROM student WHERE id =`을 **바깥 쿼리**, 그리고 괄호 안의 `SELECT id FROM student WHERE kindness = 100`을 **안쪽 쿼리**라고 부릅니다.
 
 ## 서브쿼리로 컬럼 추가하기
 서브쿼리를 이용해 테이블에 존재하지 않는 **가상의 컬럼**을 추가 할 수 있습니다.
@@ -67,9 +69,9 @@ SELECT * FROM (SELECT s.name, f.food FROM student AS s, foods AS f WHERE s.kindn
 # 5  | 김려은 | 피자     |
 ```
 
-위의 `FROM` 뒤의 안쪽 쿼리 `SELECT s.name, f.food FROM student AS s, foods AS f WHERE s.kindness = f.kindness`는 `student` 테이블과 `foods` 테이블에서 `kindness` 컬럼 값으로 두 테이블을 합친 쿼리입니다. (**다음 장에서 배울 JOIN 연산이 이런 작업을 의미합니다.**)
+위의 `FROM` 뒤의 안쪽 쿼리 `SELECT s.name, f.food FROM student AS s, foods AS f WHERE s.kindness = f.kindness`는 `student` 테이블과 `foods` 테이블에서 `kindness` 컬럼 값으로 두 테이블을 합친 쿼리입니다. (**다음 장에서 배울 JOIN 연산이 이런 작업을 합니다.**)
 
-눈치 채신분도 계시겠지만 모든 `SELECT`를 통해 나온 결과는 이름없는 **가상 테이블**입니다. 이러한 가상 테이블도 `FROM`을 통해 데이터를 받아올 수 있습니다.
+눈치 채신분도 계시겠지만 모든 `SELECT`를 통해 나온 결과는 이름없는 **가상 테이블**입니다. 이러한 가상 테이블도 `FROM`을 통해 데이터를 받아올 수 있습니다. 여기서 `AS`를 통해 별명을 붙여줘야 합니다.
 
 ## 마치며
 이번 장에서는 `SUBQUERY`에 대해 알아보았습니다. 여기서 `SUBQUERY`는 수학적으로 단일 쿼리로 바뀔 수 있음이 증명되었고, `JOIN`을 사용한 쿼리로도 변경될 수 있으며 심지어 성능도 `JOIN`이 더 좋습니다. 하지만 서브쿼리를 쓰면 직관적이고 편하게 쿼리를 만들 수 있는 경우가 많습니다.
