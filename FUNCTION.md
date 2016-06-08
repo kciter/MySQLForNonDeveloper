@@ -228,7 +228,7 @@ SELECT date_format('2016-06-09 01:39:46', '%Y/%c/%e %l:%i %p') FROM table;
 # 2016/6/9 1:39 AM
 ```
 
-## 출처
+## 참고
 http://egloos.zum.com/piccom/v/2866254
 
 ## 지적, 수정사항에 대해서
