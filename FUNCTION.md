@@ -202,7 +202,7 @@ SELECT month('2016-06-09 01:39:46') FROM table;
 
 사용 예:
 ```sql
-SELECT month('2016-06-09 01:39:46') FROM table;
+SELECT dayofmonth('2016-06-09 01:39:46') FROM table;
 # 결과
 # 9
 ```
