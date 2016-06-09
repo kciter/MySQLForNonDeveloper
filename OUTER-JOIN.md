@@ -15,7 +15,7 @@
 
 <p align="center">
   <img src="https://github.com/kciter/MySQLForNonDeveloper/blob/master/Images/img_rightjoin.gif?raw=true"><br>
-  <sub><code>LEFT JOIN</code>은 오른쪽 테이블을 먼저 불러온다</sub>
+  <sub><code>RIGHT JOIN</code>은 오른쪽 테이블을 먼저 불러온다</sub>
 </p>
 
 마찬가지로 `RIGHT JOIN`은 오른쪽 테이블의 모든 데이터와 왼쪽 테이블과의 교집합 데이터를 불러옵니다. 아직 감이 잘 안오시는 분들이 많을 것 같습니다.
