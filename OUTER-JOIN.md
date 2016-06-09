@@ -78,6 +78,9 @@ ON o.customer_id = c.id;
 ## 마치며
 마지막으로 외부 조인에 대해서 배웠습니다. 다음 장부터는 부록입니다. 부록의 내용은 MySQL의 [함수](FUNCTION.md)와 [정규표현식](REGEX.md), [R프로그래밍](R.md) 맛보기 입니다.
 
+## 사진 출처
+* [W3School](http://w3schools.com/sql/)
+
 ## 지적, 수정사항에 대해서
 Github 계정이 있으신 분들은 Issue에 지적사항을 등록해주시거나 직접 수정하여 Pull request를 주시면 반영하도록 하겠습니다. <br>Github 계정이 없으신 분들은 kciter@naver.com를 통해 지적사항을 보내주세요. :smile:
 
