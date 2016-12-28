@@ -33,7 +33,7 @@ SELECT * FROM table WHERE column1 > 10 AND (column2 < 10 OR column3 = 10);
 ```
 
 ## 마치며
-지금까지 조건절인 `WHERE`에 대해서 공부했습니다. 다음 장에서는 심화된 `WHERE`에 대해서 배워봅시다.
+지금까지 조건절인 `WHERE`에 대해서 공부했습니다. [다음 장](WHERE-MORE.md)에서는 심화된 `WHERE`에 대해서 배워봅시다.
 
 ## 지적, 수정사항에 대해서
 Github 계정이 있으신 분들은 Issue에 지적사항을 등록해주시거나 직접 수정하여 Pull request를 주시면 반영하도록 하겠습니다. <br>Github 계정이 없으신 분들은 kciter@naver.com를 통해 지적사항을 보내주세요. :smile:
