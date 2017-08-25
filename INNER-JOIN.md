@@ -106,7 +106,7 @@ ON o.customers_id = c.id;
 > 힌트: GROUP BY, count
 
 ## 마치며
-이번 장에서는 내부 조인에 대해서 배웠습니다. 다음 장에서는 테이블 간의 **합집합**을 구하는 [외부 조인](OUTER-JOIN.md)에 대해서 배워보겠습니다.
+이번 장에서는 내부 조인에 대해서 배웠습니다. [다음 장](OUTER-JOIN.md)에서는 테이블 간의 **합집합**을 구하는 [외부 조인](OUTER-JOIN.md)에 대해서 배워보겠습니다.
 
 ## 사진 출처
 * [W3School](http://w3schools.com/sql/)
