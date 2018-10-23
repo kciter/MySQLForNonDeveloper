@@ -14,7 +14,7 @@
 |2  |장문익|182cm|99  |
 |3  |이인재|190cm|80  |
 |4  |이선협|168cm|0   |
-|5  |김려은|170cm|85  |
+|5  |신태민|170cm|85  |
 
 여기서 친절함이 100인 사람의 이름을 알아보려고 합니다.
 
@@ -42,7 +42,7 @@ SELECT *, (SELECT count(*)+1 FROM student WHERE height > s.height) AS rank FROM 
 # 2  | 장문익 | 182cm | 99     | 3
 # 3  | 이인재 | 190cm | 80     | 1
 # 4  | 이선협 | 168cm | 0      | 5
-# 5  | 김려은 | 170cm | 85     | 4
+# 5  | 신태민 | 170cm | 85     | 4
 ```
 
 우리는 위 쿼리와 같이 서브쿼리의 결과에 대해 rank라는 별명을 붙이고 새로운 컬럼을 만들었습니다.
@@ -66,7 +66,7 @@ SELECT * FROM (SELECT s.name, f.food FROM student AS s, foods AS f WHERE s.kindn
 # 2  | 장문익 | 파스타   |
 # 3  | 이인재 | 라면     |
 # 4  | 이선협 | 쑥       |
-# 5  | 김려은 | 피자     |
+# 5  | 신태민 | 피자     |
 ```
 
 위의 `FROM` 뒤의 안쪽 쿼리 `SELECT s.name, f.food FROM student AS s, foods AS f WHERE s.kindness = f.kindness`는 `student` 테이블과 `foods` 테이블에서 `kindness` 컬럼 값으로 두 테이블을 합친 쿼리입니다. (**다음 장에서 배울 JOIN 연산이 이런 작업을 합니다.**)
